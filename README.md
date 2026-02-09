@@ -1,8 +1,6 @@
-## Gaussian Elimination with Partial Pivoting
-numerical method used to solve a system of linear equations
-Ax=b by transforming the matrix into an upper triangular form, followed by back substitution.
-
----
-## Gauss–Jordan Elimination 
-transforms the matrix into Reduced Row Echelon Form (RREF) 
-and obtains the solution directly without back substitution.
+## Project#1 CSS114
+Create a program to solve a system of linear equations using the following method:
+1. Gauss Elimination with pivoting
+2. Gauss Jordan Elimination
+3. LU Factorization
+4. Inverse Matrix
