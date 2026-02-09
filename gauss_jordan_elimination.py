@@ -25,3 +25,5 @@ def gauss_jordan(A, b):#The function that solves a system of linear equations Ax
     
     # Aug will be in RREF
     return Aug[:, -1]
+
+print("Gauss-Jordan elimination module loaded.")

@@ -14,8 +14,9 @@ def gauss_elimination(A, b): #The function that solves a system of linear equati
         if A[max_row, k] == 0:
             raise ValueError("Matrix is singular")# If the pivot point is 0, the equation cannot be solved
         
-        A[[k, max_row]] = A[[max_row, k]]# Swap row k with the row that has the largest pivot in matrix A
-        b[[k, max_row]] = b[[max_row, k]]# Swap b as well so that the system of equations remains correct
+        if max_row != k:
+            A[[k, max_row]] = A[[max_row, k]]# Swap row k with the row that has the largest pivot in matrix A
+            b[[k, max_row]] = b[[max_row, k]]# Swap b as well so that the system of equations remains correct
 
         for i in range(k+1, n): # Loop to delete the value below the pivot
             factor = A[i, k] / A[k, k] #To make A[i, k] become 0
@@ -27,5 +28,8 @@ def gauss_elimination(A, b): #The function that solves a system of linear equati
     x = np.zeros(n)# Create a solution vector x of size n. Initialize all values ​​to 0
 
     for i in range(n-1, -1, -1):# Create a solution vector x of size n
-        x[i] = (b[i] - np.dot(A[i, i+1:], x[i+1:])) / A[i, i] # formula to calculate x[i]
+        sum_ax = np.dot(A[i, i+1:], x[i+1:])
+        x[i] = (b[i] - sum_ax) / A[i, i] # formula to calculate x[i]
     return x
+
+print("Gauss elimination module loaded.")
