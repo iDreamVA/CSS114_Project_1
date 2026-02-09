@@ -17,6 +17,7 @@ def gauss_jordan(A, b):#The function that solves a system of linear equations Ax
             raise ValueError("Matrix is singular")# If the pivot point is 0, it means the matrix is ​​singular.
         
         Aug[[k, pivot_row]] = Aug[[pivot_row, k]]#Swap the pivot row with the row containing the largest pivot.
+        Aug[k] = Aug[k] / Aug[k, k] # Normalize the pivot row
         for i in range(n):#To make the pivot point equal to 1
 
             if i != k:# Do not modify the pivot row
