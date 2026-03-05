@@ -29,7 +29,7 @@ def gauss_elimination(A, b): #The function that solves a system of linear equati
 
     for i in range(n-1, -1, -1):# Create a solution vector x of size n
         sum_ax = np.dot(A[i, i+1:], x[i+1:])
-        x[i] = (b[i] - sum_ax) / A[i, i] # formula to calculate x[i]
+        x[i] = (b[i][0] - sum_ax) / A[i, i] # formula to calculate x[i]
     return x
 
 print("Gauss elimination module loaded.")
